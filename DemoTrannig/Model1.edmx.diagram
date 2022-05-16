@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c2b3b1d33c641109cafcec2d801c166" Name="Diagram1">
+        <EntityTypeShape EntityType="dfominaModel.Category" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.Manufacturers" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.Order" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.OrderPickUpPoints" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.OrderStatus" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.Product" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.Providers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.Role" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.User" Width="1.5" PointX="8" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dfominaModel.OrderProduct" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="dfominaModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_Product_Manufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_Order_OrderPickUpPoints" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_OrderProduct_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK_Product_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="dfominaModel.FK__User__UserRole__04E4BC85" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

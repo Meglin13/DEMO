@@ -1,0 +1,65 @@
+﻿<Page x:Class="DemoTrannig.Pages.CatalogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoTrannig.Pages"
+      mc:Ignorable="d" 
+      Title="CatalogPage">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Label Name="NameLB" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            
+            <Label Content="Поиск" VerticalAlignment="Center"/>
+            <TextBox Width="200" VerticalAlignment="Center" Name="SearchTB" TextChanged="SearchTB_TextChanged"/>
+            <Label Content="Фильтр по производителю" VerticalAlignment="Center"/>
+            
+            <ComboBox Name="ManufatcurerCB" ItemsSource="{Binding Source=Manifacturers, Path=Manufacturers1}" 
+                      DisplayMemberPath="Manufacturers1" Width="200" Height="30" 
+                      SelectionChanged="ManufatcurerCB_SelectionChanged"/>
+            
+            <Button Content="По возр. цены" Name="AscButton" Click="AscButton_Click"/>
+            <Button Content="По уб. цены" Name="DesButton" Click="DesButton_Click"/>
+            <Button Content="Сброс" Name="ResetSorting" Click="ResetSorting_Click"/>
+            
+        </StackPanel>
+
+        <ListView Grid.Row="2" Width="800" Height="400" Name="CatalogListView" 
+                  HorizontalAlignment="Center" VerticalContentAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="100">
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Source="picture.png" Grid.Column="0" Height="100"/>
+                        
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" TextWrapping="WrapWithOverflow"/>
+                            <TextBlock Text="{Binding ProductDescription}" TextWrapping="WrapWithOverflow"/>
+                            <TextBlock Text="{Binding Manufacturers.Manufacturers1}" TextWrapping="WrapWithOverflow"/>
+                            <TextBlock Text="{Binding ProductCost, StringFormat={}Цена: {0}}" TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+
+                        <TextBlock Text="{Binding ProductQuantityInStock, StringFormat={}В наличии: {0}}" Grid.Column="3" TextWrapping="WrapWithOverflow"                                   
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Вернуться на главную" Name="BackButton" Click="BackButton_Click" Width="250" Grid.Row="3"/>
+        <Label Name="ProductQuantityLB" HorizontalAlignment="Right"  Grid.Row="3"/>
+    </Grid>
+</Page>
